@@ -15,12 +15,14 @@ namespace Project2.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Entries
+        [Authorize]
         public ActionResult Index()
         {
             return View(db.Entries.ToList());
         }
 
         // GET: Entries/Details/5
+        [Authorize]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -59,6 +61,7 @@ namespace Project2.Controllers
         }
 
         // GET: Entries/Edit/5
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -78,6 +81,7 @@ namespace Project2.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Edit([Bind(Include = "Id,NameFirst,MiddleName,LastName,SSN,Email,HomePhone,CellPhone,Street,City,State,Zipcode,DOB,GenderID,HighSchoolName,HighSchoolCity,GradDate,GPA,Math,Verbal,MajorsInterest,EnrollSeason,EnrollYear")] Entry entry)
         {
             if (ModelState.IsValid)
@@ -90,6 +94,7 @@ namespace Project2.Controllers
         }
 
         // GET: Entries/Delete/5
+        [Authorize]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -107,6 +112,7 @@ namespace Project2.Controllers
         // POST: Entries/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult DeleteConfirmed(int id)
         {
             Entry entry = db.Entries.Find(id);

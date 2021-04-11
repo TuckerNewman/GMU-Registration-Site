@@ -101,7 +101,6 @@ C:\Users\tucke\OneDrive\Documents\College\George Mason\IT 431\Projects\Project2\
 C:\Users\tucke\OneDrive\Documents\College\George Mason\IT 431\Projects\Project2\Project2\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\tucke\OneDrive\Documents\College\George Mason\IT 431\Projects\Project2\Project2\bin\Microsoft.Owin.Security.OAuth.xml
 C:\Users\tucke\OneDrive\Documents\College\George Mason\IT 431\Projects\Project2\Project2\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\tucke\OneDrive\Documents\College\George Mason\IT 431\Projects\Project2\Project2\obj\Debug\Project2.csprojAssemblyReference.cache
 C:\Users\tucke\OneDrive\Documents\College\George Mason\IT 431\Projects\Project2\Project2\obj\Debug\Project2.csproj.CoreCompileInputs.cache
 C:\Users\tucke\OneDrive\Documents\College\George Mason\IT 431\Projects\Project2\Project2\obj\Debug\Project2.csproj.CopyComplete
 C:\Users\tucke\OneDrive\Documents\College\George Mason\IT 431\Projects\Project2\Project2\obj\Debug\Project2.dll
@@ -321,3 +320,5 @@ C:\Users\mb\Documents\21s---\431 dev\pj2\group version1\Project2\Project2\obj\De
 C:\Users\mb\Documents\21s---\431 dev\pj2\group version1\Project2\Project2\obj\Debug\Project2.csproj.CopyComplete
 C:\Users\mb\Documents\21s---\431 dev\pj2\group version1\Project2\Project2\obj\Debug\Project2.dll
 C:\Users\mb\Documents\21s---\431 dev\pj2\group version1\Project2\Project2\obj\Debug\Project2.pdb
+C:\Users\tucke\OneDrive\Documents\College\George Mason\IT 431\Projects\Project2\Project2\obj\Debug\Project2.Migrations.gmudb.resources
+C:\Users\tucke\OneDrive\Documents\College\George Mason\IT 431\Projects\Project2\Project2\obj\Debug\Project2.csproj.GenerateResource.cache
