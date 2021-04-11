@@ -29,5 +29,7 @@ namespace Project2.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<Project2.Models.Entry> Entries { get; set; }
     }
 }

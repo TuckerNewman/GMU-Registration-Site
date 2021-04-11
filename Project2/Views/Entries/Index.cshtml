@@ -1,0 +1,159 @@
+﻿@model IEnumerable<Project2.Models.Entry>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NameFirst)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MiddleName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SSN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HomePhone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CellPhone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Street)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.City)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.State)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Zipcode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DOB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GenderID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HighSchoolName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HighSchoolCity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GradDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GPA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Math)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Verbal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MajorsInterest)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EnrollSeason)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EnrollYear)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NameFirst)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MiddleName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SSN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HomePhone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CellPhone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Street)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.City)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.State)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Zipcode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DOB)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GenderID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HighSchoolName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HighSchoolCity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GradDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GPA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Math)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Verbal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MajorsInterest)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EnrollSeason)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EnrollYear)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
