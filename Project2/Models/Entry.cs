@@ -25,7 +25,7 @@ namespace Project2.Models
         public string NameFirst { get; set; }
 
         [Required]
-        [Display(Name = "Middle Name (if none, type N'/A ")]
+        [Display(Name = "Middle Name (if none, type N/A)")]
         public string MiddleName { get; set; }
 
         [Required]
@@ -51,7 +51,7 @@ namespace Project2.Models
         public string CellPhone { get; set; }
 
         //Address-Not required
-        [Display(Name = "Street")]
+        [Display(Name = "Address")]
         public string Street { get; set; }
 
         [Display(Name = "City")]
@@ -60,7 +60,7 @@ namespace Project2.Models
         [Display(Name = "State")]
         public string State { get; set; }
 
-        [Display(Name = "Zipcode")]
+        [Display(Name = "Zip Code")]
         public string Zipcode { get; set; }
 
 
