@@ -50,6 +50,20 @@ namespace Project2.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,NameFirst,MiddleName,LastName,SSN,Email,HomePhone,CellPhone,Street,City,State,Zipcode,DOB,GenderID,HighSchoolName,HighSchoolCity,GradDate,GPA,Math,Verbal,MajorsInterest,EnrollSeason,EnrollYear")] Entry entry)
         {
+            Entry MatchingSSN = db.Entries.Where(cm => string.Compare(cm.SSN, entry.SSN, true)==0).FirstOrDefault();
+            Entry MatchingEmail = db.Entries.Where(cm => string.Compare(cm.Email, entry.Email, true) == 0).FirstOrDefault();
+
+            if (MatchingSSN != null)
+            {
+                ModelState.AddModelError("SSN", "SSN must be unique");
+                return View(entry);
+            }
+            if (MatchingEmail != null)
+            {
+                ModelState.AddModelError("Email", "Email address must be unique");
+                return View(entry);
+            }
+
             if (ModelState.IsValid)
             {
                 db.Entries.Add(entry);
