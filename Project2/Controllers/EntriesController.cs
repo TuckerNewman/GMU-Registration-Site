@@ -16,9 +16,17 @@ namespace Project2.Controllers
 
         // GET: Entries
         [Authorize]
-        public ActionResult Index()
+        public ActionResult Index(string search)
         {
-            return View(db.Entries.ToList());
+
+            var entries = from i in db.Entries select i;
+
+            if (!String.IsNullOrEmpty(search))
+            {
+                entries = entries.Where(e => e.LastName.Contains(search) || e.SSN.Contains(search));
+            }
+
+            return View(entries.ToList());
         }
 
         // GET: Entries/Details/5
