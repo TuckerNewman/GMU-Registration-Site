@@ -10,7 +10,7 @@ using System.Web.Mvc;
 
 namespace Project2.Models
 {
-    public class Entry
+    public class Entry : CreationDate //CreationDate Inheritance used for Submission Date
     {
 
 
@@ -25,7 +25,7 @@ namespace Project2.Models
         public string NameFirst { get; set; }
 
         [Required]
-        [Display(Name = "Middle Name (if none, type N/A)")]
+        [Display(Name = "Middle Name (if none, N/A)")]
         public string MiddleName { get; set; }
 
         [Required]
@@ -123,6 +123,8 @@ namespace Project2.Models
 
         [Display(Name = "Prospective Enrollment Year")]
         public string EnrollYear { get; set; }
+
+        public string Decision { get; set; }
 
 
     }

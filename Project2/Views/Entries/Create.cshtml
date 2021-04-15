@@ -213,6 +213,17 @@
         </div>
     </div>
 
+
+    <div class="form-group">
+        @*@Html.LabelFor(model => model.Decision, htmlAttributes: new { @class = "control-label col-md-2" })*@
+
+        @*Decision Label and field is hidden from Create view; Decision value is initialized as "Pending" upon creation*@
+        <div class="col-md-10">
+            @Html.HiddenFor(model => model.Decision, new { Value = "Pending" })
+            @Html.ValidationMessageFor(model => model.Decision, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
             <input type="submit" value="Create" class="btn btn-default" />

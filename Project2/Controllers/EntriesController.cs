@@ -19,6 +19,7 @@ namespace Project2.Controllers
         public ActionResult Index(string search)
         {
 
+            //Method for searhc box; data will display if matching SSN or Last Name is found in Db
             var entries = from i in db.Entries select i;
 
             if (!String.IsNullOrEmpty(search))
@@ -56,7 +57,7 @@ namespace Project2.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,NameFirst,MiddleName,LastName,SSN,Email,HomePhone,CellPhone,Street,City,State,Zipcode,DOB,GenderID,HighSchoolName,HighSchoolCity,GradDate,GPA,Math,Verbal,MajorsInterest,EnrollSeason,EnrollYear")] Entry entry)
+        public ActionResult Create([Bind(Include = "Id,NameFirst,MiddleName,LastName,SSN,Email,HomePhone,CellPhone,Street,City,State,Zipcode,DOB,GenderID,HighSchoolName,HighSchoolCity,GradDate,GPA,Math,Verbal,MajorsInterest,EnrollSeason,EnrollYear, Decision")] Entry entry)
         {
             Entry MatchingSSN = db.Entries.Where(cm => string.Compare(cm.SSN, entry.SSN, true)==0).FirstOrDefault();
             Entry MatchingEmail = db.Entries.Where(cm => string.Compare(cm.Email, entry.Email, true) == 0).FirstOrDefault();
@@ -104,7 +105,7 @@ namespace Project2.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize]
-        public ActionResult Edit([Bind(Include = "Id,NameFirst,MiddleName,LastName,SSN,Email,HomePhone,CellPhone,Street,City,State,Zipcode,DOB,GenderID,HighSchoolName,HighSchoolCity,GradDate,GPA,Math,Verbal,MajorsInterest,EnrollSeason,EnrollYear")] Entry entry)
+        public ActionResult Edit([Bind(Include = "Id,NameFirst,MiddleName,LastName,SSN,Email,HomePhone,CellPhone,Street,City,State,Zipcode,DOB,GenderID,HighSchoolName,HighSchoolCity,GradDate,GPA,Math,Verbal,MajorsInterest,EnrollSeason,EnrollYear, Decision")] Entry entry)
         {
             if (ModelState.IsValid)
             {

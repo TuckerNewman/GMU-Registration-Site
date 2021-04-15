@@ -1,6 +1,9 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.Data.Entity;
+using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using System.Web;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 
@@ -31,5 +34,39 @@ namespace Project2.Models
         }
 
         public System.Data.Entity.DbSet<Project2.Models.Entry> Entries { get; set; }
+
+        public override int SaveChanges()
+        {
+            AddTimestamps();
+            return base.SaveChanges();
+        }
+
+        public override async Task<int> SaveChangesAsync()
+        {
+            AddTimestamps();
+            return await base.SaveChangesAsync();
+        }
+
+        private void AddTimestamps()
+        {
+            var entities = ChangeTracker.Entries().Where(x => x.Entity is CreationDate && (x.State == EntityState.Added || x.State == EntityState.Modified));
+
+            var currentUsername = !string.IsNullOrEmpty(System.Web.HttpContext.Current?.User?.Identity?.Name)
+                ? HttpContext.Current.User.Identity.Name
+                : "Anonymous";
+
+            foreach (var entity in entities)
+            {
+                if (entity.State == EntityState.Added)
+                {
+                    ((CreationDate)entity.Entity).DateCreated = DateTime.UtcNow;
+                    ((CreationDate)entity.Entity).UserCreated = currentUsername;
+                }
+
+
+                ((CreationDate)entity.Entity).DateCreated = DateTime.UtcNow;
+                ((CreationDate)entity.Entity).UserCreated = currentUsername;
+            }
+        }
     }
 }
