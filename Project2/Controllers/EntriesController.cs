@@ -61,6 +61,19 @@ namespace Project2.Controllers
         {
             Entry MatchingSSN = db.Entries.Where(cm => string.Compare(cm.SSN, entry.SSN, true)==0).FirstOrDefault();
             Entry MatchingEmail = db.Entries.Where(cm => string.Compare(cm.Email, entry.Email, true) == 0).FirstOrDefault();
+            var Score = entry.Math + entry.Verbal;
+            var GPA = entry.GPA;
+            if(Score < 1000)
+            {
+                ModelState.AddModelError("SAT Score", "You do not meet the minimum SAT score requirements (SAT score is less than 1000)");
+                return View(entry);
+            }
+            
+            if(GPA < 3.0)
+            {
+                ModelState.AddModelError("GPA", "You do not meet the minimum GPA requirements (GPA is less than 3.0)");
+                return View(entry);
+            }
 
             if (MatchingSSN != null)
             {
