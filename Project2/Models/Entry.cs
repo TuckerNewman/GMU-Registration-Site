@@ -35,19 +35,23 @@ namespace Project2.Models
         //validation - no duplicate SSNs allowed
         [Required]
         [Display(Name = "SSN")]
+        [RegularExpression(@"^\d{9}|\d{3}-\d{2}-\d{4}$", ErrorMessage = "Error: SSN must be in format xxx-xx-xxxx")]
         public string SSN { get; set; }
 
         [Required]
         [Display(Name = "Email Address")]
+        [EmailAddress(ErrorMessage = "Error: email address is invalid")]
         public string Email { get; set; }
 
 
         //these below aren't required 
 
         [Display(Name = "Home Phone")]
+        [Phone(ErrorMessage = "Error: home phone is invalid")]
         public string HomePhone { get; set; }
 
         [Display(Name = "Cell Phone")]
+        [Phone(ErrorMessage = "Error: cell phone is invalid")]
         public string CellPhone { get; set; }
 
         //Address-Not required

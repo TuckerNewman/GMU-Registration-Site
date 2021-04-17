@@ -23,23 +23,27 @@
                 @Html.ActionLink("GMU Admissions", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
-                <ul id ="nav-links" class="nav navbar-nav">
-                    <li  target ="_blank" class="nav-link"  >@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li  target ="_blank" class="nav-link"  >@Html.ActionLink("About", "About", "Home")</li>
-                    <li  target ="_blank" class="nav-link"  >@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li  target ="_blank" class="nav-link"  >@Html.ActionLink("Apply Now", "Create", "Entries")</li>
+                <ul id="nav-links" class="nav navbar-nav">
+                    <li target="_blank" class="nav-link">@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li target="_blank" class="nav-link">@Html.ActionLink("About", "About", "Home")</li>
+                    <li target="_blank" class="nav-link">@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li target="_blank" class="nav-link">@Html.ActionLink("Apply Now", "Create", "Entries")</li>
                 </ul>
 
-                @using (Html.BeginForm("Index", "Entries", FormMethod.Get, new { @class = "navbar-form navbar-left"}))
-                {
-                    <div class="form-group">
-                        @Html.TextBox("Search", null, new
-                        {
-                            @class = "form-control",
-                            @placeholder = "Search by Last name / SSN"
-                        })
-                    </div>
-                    <button type="submit" class="btn btn-default">Submit</button>
+                @*Search box is only accessible with successful login*@
+                @if (Request.IsAuthenticated)
+                { 
+                    using (Html.BeginForm("Index", "Entries", FormMethod.Get, new { @class = "navbar-form navbar-left" }))
+                    {
+                        <div class="form-group">
+                            @Html.TextBox("Search", null, new
+                            {
+                                @class = "form-control",
+                                @placeholder = "Search by Last name / SSN"
+                            })
+                        </div>
+                        <button type="submit" class="btn btn-default">Submit</button>
+                    }
                 }
 
                 @Html.Partial("_LoginPartial")
