@@ -229,6 +229,10 @@ td{
     border: .7px solid black;
     padding:15px !important;
 }
+td:hover{
+    background: black;
+    color:white;
+}
 .entry-name{
     width:150px !important;
 }
