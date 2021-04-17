@@ -4,7 +4,7 @@
     background-color: white;
 }
 
-/* Set padding to keep content from hitting the edges */
+/* Set padding to keep content fryeom hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
@@ -228,10 +228,6 @@ td{
     color:black;
     border: .7px solid black;
     padding:15px !important;
-}
-td:hover{
-    background: black;
-    color:white;
 }
 .entry-name{
     width:150px !important;
