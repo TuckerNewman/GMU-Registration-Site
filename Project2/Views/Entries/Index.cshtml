@@ -4,84 +4,91 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
 
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.NameFirst)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MiddleName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.LastName)
-        </th>
-        <th>
-            Submission Date
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SSN)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.GPA)
-        </th>
-        <th>
-            SAT Score
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.EnrollSeason)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.EnrollYear)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Decision)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-<tr>
-    <td>
-        @Html.DisplayFor(modelItem => item.NameFirst)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.MiddleName)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.LastName)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.DateCreated)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.SSN)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.GPA)
-    </td>
-    <td>
-        @{
-            var scoreTotal = item.Math + item.Verbal;
-            @Html.DisplayFor(s => scoreTotal)
-        }
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.EnrollSeason)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.EnrollYear)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Decision)
-    </td>
-    <td>
-        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-        @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-    </td>
-</tr>
-}
+    <h2 class="form-applicants">Current Applicants</h2>
+    <div class="entry-main">
+        <table class="entry-table table">
+            <tr>
 
-</table>
+                <th  class="entry-name">
+                    @Html.DisplayNameFor(model => model.NameFirst)
+                </th>
+                <th  class="entry-name">
+                    @Html.DisplayNameFor(model => model.MiddleName)
+                </th>
+                <th  class="entry-name">
+                    @Html.DisplayNameFor(model => model.LastName)
+                </th>
+                <th   class="entry-date">
+                    Submission Date
+                </th>
+                <th   class="entry-ssn">
+                    @Html.DisplayNameFor(model => model.SSN)
+                </th>
+                <th    class="entry-gpa">
+                    @Html.DisplayNameFor(model => model.GPA)
+                </th>
+                <th    class="entry-score">
+                    SAT Score
+                </th>
+                <th    class="entry-season">
+                    @Html.DisplayNameFor(model => model.EnrollSeason)
+                </th>
+                <th    class="entry-year">
+                    @Html.DisplayNameFor(model => model.EnrollYear)
+                </th>
+                <th    class="entry-decision">
+                    @Html.DisplayNameFor(model => model.Decision)
+                </th>
+
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td class="entry-name">
+                        @Html.DisplayFor(modelItem => item.NameFirst)
+                    </td>
+                    <td class="entry-name">
+                        @Html.DisplayFor(modelItem => item.MiddleName)
+                    </td>
+                    <td class="entry-name">
+                        @Html.DisplayFor(modelItem => item.LastName)
+                    </td>
+                    <td class="entry-date">
+                        @Html.DisplayFor(modelItem => item.DateCreated)
+                    </td>
+                    <td class="entry-ssn">
+                        @Html.DisplayFor(modelItem => item.SSN)
+                    </td>
+                    <td class="entry-gpa">
+                        @Html.DisplayFor(modelItem => item.GPA)
+                    </td>
+                    <td class="entry-score">
+                        @{
+                            var scoreTotal = item.Math + item.Verbal;
+                            @Html.DisplayFor(s => scoreTotal)
+                        }
+                    </td>
+                    <td class="entry-season">
+                        @Html.DisplayFor(modelItem => item.EnrollSeason)
+                    </td>
+                    <td class="entry-year">
+                        @Html.DisplayFor(modelItem => item.EnrollYear)
+                    </td>
+                    <td class="entry-decision">
+                        @Html.DisplayFor(modelItem => item.Decision)
+                    </td>
+                    <td class="entry-table-edit">
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div><!--entry main-->
+

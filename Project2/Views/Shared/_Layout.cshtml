@@ -17,14 +17,17 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                <div class="div-logo">
+                    <img class="logo" style="height:70px;width:auto;" src="~/Img/logo.png" />
+                </div>
+                @Html.ActionLink("GMU Admissions", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Apply Now", "Create", "Entries")</li>
+                <ul id ="nav-links" class="nav navbar-nav">
+                    <li  target ="_blank" class="nav-link"  >@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li  target ="_blank" class="nav-link"  >@Html.ActionLink("About", "About", "Home")</li>
+                    <li  target ="_blank" class="nav-link"  >@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li  target ="_blank" class="nav-link"  >@Html.ActionLink("Apply Now", "Create", "Entries")</li>
                 </ul>
 
                 @using (Html.BeginForm("Index", "Entries", FormMethod.Get, new { @class = "navbar-form navbar-left"}))
@@ -43,7 +46,7 @@
             </div>
         </div>
     </div>
-    <div class="container body-content">
+    <div class="main-content container body-content">
         @RenderBody()
         <hr />
         <footer>

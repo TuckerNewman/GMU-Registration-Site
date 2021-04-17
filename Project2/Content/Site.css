@@ -1,13 +1,68 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
-    background-color: #b5b5b5;
+    background-color: white;
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+}
+.navbar-inverse .navbar-brand {
+    color: white !important;
+    height:100px;
+    width:60px;
+    padding:5px;
+}
+.container{
+
+}
+.navbar-brand {
+    padding-left:50px;
+    text-align:center;
+    font-size: 18px !important;
+}
+.logo{
+    padding:5px;
+}
+.div-logo{
+    background-color:white;
+}
+.navbar {
+    margin-bottom: 150px; /*space for content below navbar*/
+    padding-top: 25px;
+    padding-bottom: 50px !important;
+    font-size: 15px;
+    color: white !important;
+    height: 150px !important;
+    background-color: #006432 !important;
+    box-shadow: -3px 13px 11px -4px rgba(43,84,131,0.49) !important;
+    -webkit-box-shadow: -3px 13px 11px -4px rgba(43,84,131,0.49) !important;
+    -moz-box-shadow: -3px 13px 11px -4px rgba(43,84,131,0.49) !important;
+}
+
+/*override default navbar color*/
+.navbar-inverse .navbar-nav li a {
+    color: white !important;
+}
+.navbar-inverse .navbar-nav li a:hover {
+    color: black !important;
+    background-color:white;
+}
+.navbar-form{
+
+}
+#nav-links {
+    margin-left: 145px;
+    color: black;
+   
+}
+.nav-link {
+font-size: 15px;    
+}
+.nav-link:hover {
+    color: black !important;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -22,4 +77,184 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+
+/*search bar - override default bootrap behavior*/
+.form-control{
+    width:240px !important;
+}
+/*homepage*/
+.homepage {
+    text-align: center !important;
+}
+.homepage-title{
+    font-size:45px;
+}
+.homepage-banner {
+    border: 4px solid #006432 !important;
+    border-radius: 4px;
+    background-color: white;
+    margin-bottom: 35px;
+}
+.homepage-banner-description{
+    font-size: 15px;
+    padding-left:25px;
+}
+.homepage-banner-description-row {
+    background-color: #006432;
+    color:white;
+}
+.homepage-student {
+    font-size: 15px;
+    background-color: white;
+    border: 5px solid goldenrod;
+    color: black;
+    padding: 20px;
+    margin-bottom: 35px;
+}
+.homepage-student-description-invitation{
+    font-size:19px;
+}
+.homepage-student-button {
+    font-size: 25px;
+    padding: 10px;
+    box-shadow: -1px -1px .7px .7px goldenrod;
+    background: linear-gradient(to bottom, #006432 5%, #006432 100%);
+    background-color: #7892c2;
+    border-radius: 9px;
+    border: 1px solid #4e6096;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 19px;
+    padding: 17px 37px;
+    text-decoration: none;
+    text-shadow: 2px -2px 2px #283966;
+}
+.homepage-student-button:hover{
+    background-color:goldenrod;
+    color:black;
+    border:black;
+}
+.homepage-content-div{
+    border: 4px solid goldenrod;
+    margin-top:25px;
+    margin-bottom: 25px;
+    padding: 15px;
+    width: 100%;
+}
+
+/*contact page*/
+.contact-description{
+    padding-right:35px;
+}
+
+/*edit details etc*/
+.register-main {
+    border: 2px solid #006432;
+}
+.register-edit {
+    border: 2px solid goldenrod;
+    padding: 20px;
+    padding-left: 210px;
+    padding-right:210px;
+}
+.form-applicants {
+    border-top: 4px solid #006432;
+    border-bottom: 4px solid goldenrod;
+    border-radius: 4px;
+    height: 65px;
+    padding-top:15px;
+    font-size: 25px;
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+.form-title {
+    border-top: 4px solid #006432;
+    border-bottom: 4px solid goldenrod;
+    border-radius: 4px;
+    height: 55px;
+    padding-top: 8px;
+    font-size: 25px;
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+.form-group {
+    padding:10px;
+    margin-bottom: 45px;
+    border-bottom: 2px solid #006432;
+}
+.details_description {
+    margin-bottom: 45px !important;
+    border-bottom: 2px solid #006432 !important;
+}
+.details_title{
+
+}
+dt{
+
+}
+dd {
+    margin-bottom: 45px !important;
+    border-bottom: 2px solid #006432 !important;
+}
+/*end details*/
+/*entry main*/
+.entry-main {
+    border-radius: 15px !important;
+    background-color: #006432;
+    color: white;
+    padding: 10px;
+}
+.entry-table {
+
+}
+table {
+    text-align: center;
+    border: 3.5px solid goldenrod;
+
+}
+th {
+    border-left:1px solid black;
+    font-size: 17px;
+    border: .7px solid black;
+}
+td{
+    background-color:white;
+    color:black;
+    border: .7px solid black;
+    padding:15px !important;
+}
+.entry-name{
+    width:150px !important;
+}
+.entry-date {
+    width: 150px !important;
+}
+.entry-ssn {
+    width: 150px !important;
+}
+.entry-gpa {
+    width: 150px !important;
+}
+.entry-score {
+    width: 150px !important;
+}
+.entry-season {
+    width: 150px !important;
+}
+.entry-year {
+    width: 150px !important;
+}
+.entry-decision {
+    width: 150px !important;
+}
+main-content {
+}
+.body-content {
+    margin-top: 150px;
 }
