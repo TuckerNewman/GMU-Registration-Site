@@ -14,6 +14,12 @@ namespace Project2.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
+        //Success view for a successful applicaiton submission
+        public ActionResult Success()
+        {
+            return View();
+        }
+
         // GET: Entries
         [Authorize]
         public ActionResult Index(string search)
@@ -90,7 +96,8 @@ namespace Project2.Controllers
             {
                 db.Entries.Add(entry);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Success");
+
             }
 
             return View(entry);
@@ -165,5 +172,6 @@ namespace Project2.Controllers
             }
             base.Dispose(disposing);
         }
+
     }
 }
